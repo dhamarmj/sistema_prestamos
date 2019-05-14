@@ -1,11 +1,9 @@
 package edu.pucmm.Daenerys.sistema_prestamos.Encapsulation;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.util.Set;
 
 @Entity
 public class Client implements Serializable {
@@ -16,11 +14,30 @@ public class Client implements Serializable {
     @Column(columnDefinition = "LONGTEXT")
     private String foto;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "client")
+    private Set<Receipt> receipt;
+
     public Client() {
     }
     public Client(String cedula, String fotoPath) {
         this.cedula = cedula;
         this.foto = fotoPath;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public Set<Receipt> getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(Set<Receipt> receipt) {
+        this.receipt = receipt;
     }
 
     public int getId() {

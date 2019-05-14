@@ -13,13 +13,59 @@ public class Receipt implements Serializable {
     private Date date;
     private double ammount;
 
-    @OneToOne
+    @ManyToOne
     private Client client;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "receipt")
     private Set<Receipt_detail> details;
 
+    public Receipt() {
+    }
 
+    public Receipt(Date date, double ammount, Client client, Set<Receipt_detail> details) {
+        this.date = date;
+        this.ammount = ammount;
+        this.client = client;
+        this.details = details;
+    }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public double getAmmount() {
+        return ammount;
+    }
+
+    public void setAmmount(double ammount) {
+        this.ammount = ammount;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Set<Receipt_detail> getDetails() {
+        return details;
+    }
+
+    public void setDetails(Set<Receipt_detail> details) {
+        this.details = details;
+    }
 }
