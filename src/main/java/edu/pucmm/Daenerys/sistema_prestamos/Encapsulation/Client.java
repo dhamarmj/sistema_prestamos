@@ -24,6 +24,12 @@ public class Client implements Serializable {
         this.foto = fotoPath;
     }
 
+    public Client(String cedula, String foto, Set<Receipt> receipt) {
+        this.cedula = cedula;
+        this.foto = foto;
+        this.receipt = receipt;
+    }
+
     public String getFoto() {
         return foto;
     }
