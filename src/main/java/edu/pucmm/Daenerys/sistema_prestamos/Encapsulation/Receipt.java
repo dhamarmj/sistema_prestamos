@@ -22,7 +22,8 @@ public class Receipt implements Serializable {
     public Receipt() {
     }
 
-    public Receipt(Date date, double ammount, Client client, Set<Receipt_detail> details) {
+    public Receipt(int id, Date date, double ammount, Client client, Set<Receipt_detail> details) {
+        this.id = id;
         this.date = date;
         this.ammount = ammount;
         this.client = client;
