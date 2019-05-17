@@ -11,6 +11,7 @@ public class Client implements Serializable {
     @GeneratedValue
     private int id;
     private String cedula;
+    private String name;
     @Column(columnDefinition = "LONGTEXT")
     private String foto;
 
@@ -19,15 +20,27 @@ public class Client implements Serializable {
 
     public Client() {
     }
-    public Client(String cedula, String fotoPath) {
+
+    public Client(String cedula, String name, String foto) {
         this.cedula = cedula;
-        this.foto = fotoPath;
+        this.foto = foto;
+        this.name = name;
     }
 
-    public Client(String cedula, String foto, Set<Receipt> receipt) {
+    public Client(String cedula, String name, String foto, Set<Receipt> receipt) {
         this.cedula = cedula;
         this.foto = foto;
         this.receipt = receipt;
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getFoto() {
@@ -62,11 +75,4 @@ public class Client implements Serializable {
         this.cedula = cedula;
     }
 
-    public String getFotoPath() {
-        return foto;
-    }
-
-    public void setFotoPath(String fotoPath) {
-        this.foto = fotoPath;
-    }
 }
