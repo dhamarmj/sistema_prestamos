@@ -5,14 +5,12 @@ import edu.pucmm.Daenerys.sistema_prestamos.Encapsulation.Family;
 import edu.pucmm.Daenerys.sistema_prestamos.Repository.EquipmentRepository;
 import edu.pucmm.Daenerys.sistema_prestamos.Repository.FamilyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+// @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Family")
 public class FamilyController {
