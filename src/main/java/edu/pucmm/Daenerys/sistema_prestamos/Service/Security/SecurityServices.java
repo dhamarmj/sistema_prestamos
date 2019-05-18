@@ -2,7 +2,7 @@ package edu.pucmm.Daenerys.sistema_prestamos.Service.Security;
 
 import edu.pucmm.Daenerys.sistema_prestamos.Encapsulation.Role;
 import edu.pucmm.Daenerys.sistema_prestamos.Encapsulation.User;
-import edu.pucmm.Daenerys.sistema_prestamos.Repository.Security.RoleRepository;
+import edu.pucmm.Daenerys.sistema_prestamos.Repository.Security.RolRepository;
 import edu.pucmm.Daenerys.sistema_prestamos.Repository.Security.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,7 +21,7 @@ public class SecurityServices implements UserDetailsService {
     private UserRepository userRepository;
 
     @Autowired
-    private RoleRepository roleRepository;
+    private RolRepository rolRepository;
 
     //Para encriptar la información.
     private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -35,8 +35,8 @@ public class SecurityServices implements UserDetailsService {
         //System.out.println("Creación del usuario y rol en la base de datos");
         Role rolAdmin = new Role("ROLE_ADMIN");
         Role roleUser = new Role("ROLE_USER");
-        roleRepository.save(rolAdmin);
-        roleRepository.save(roleUser);
+        rolRepository.save(rolAdmin);
+        rolRepository.save(roleUser);
 
         User user = new User("user", bCryptPasswordEncoder.encode("user"),new HashSet<>(Arrays.asList(roleUser)));
         User admin = new User("admin", bCryptPasswordEncoder.encode("admin"),new HashSet<>(Arrays.asList(rolAdmin)));

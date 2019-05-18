@@ -20,10 +20,11 @@ public class Security extends WebSecurityConfigurerAdapter {
     //Configuación para la validación del acceso modo JDBC
     @Autowired
     private DataSource dataSource;
-    @Value("${query.user-jdbc}")
-    private String queryUsuario;
-    @Value("${query.rol-jdbc}")
-    private String queryRol;
+//    @Value("${query.user-jdbc}")
+//    private String queryUsuario;
+//    @Value("${query.role-jdbc}")
+//    private String queryRol;
+
 
     //Opción JPA
     @Autowired
