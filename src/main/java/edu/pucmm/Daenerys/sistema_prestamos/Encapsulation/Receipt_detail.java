@@ -12,6 +12,7 @@ public class Receipt_detail implements Serializable {
     private Date deliveryDate;
     private int quantity;
     private double ammount;
+    private boolean delivered;
 
     @ManyToOne
     private Equipment equipment;
@@ -22,12 +23,28 @@ public class Receipt_detail implements Serializable {
     public Receipt_detail() {
     }
 
-    public Receipt_detail(Date deliveryDate, int quantity, double ammount, Equipment equipment, Receipt receipt) {
-        this.deliveryDate = deliveryDate;
+    public Receipt_detail(int quantity, double ammount, Equipment equipment, Receipt receipt) {
         this.quantity = quantity;
         this.ammount = ammount;
         this.equipment = equipment;
         this.receipt = receipt;
+        this.delivered=false;
+    }
+
+    public void setAmmount(){
+        int days = daysBetween(receipt.getDate(), deliveryDate);
+        this.ammount = days*quantity*equipment.getCostxday();
+    }
+    public int daysBetween(Date d1, Date d2){
+        return (int)( (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
+    }
+
+    public boolean isDelivered() {
+        return delivered;
+    }
+
+    public void setDelivered(boolean delivered) {
+        this.delivered = delivered;
     }
 
     public int getId() {
@@ -69,6 +86,7 @@ public class Receipt_detail implements Serializable {
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
     }
+
 
     public Receipt getReceipt() {
         return receipt;

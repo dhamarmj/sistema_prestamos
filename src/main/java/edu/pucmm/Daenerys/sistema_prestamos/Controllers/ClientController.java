@@ -37,19 +37,12 @@ public class ClientController {
       Optional<Client> c = clientRepository.findById(client.getId());
       if(!c.isPresent())
       {
-          clientRepository.save(client);
-          return client;
+          return null;
       }
       else
       {
-          cliente = new Client();
-          cliente.setId(client.getId());
-          cliente.setCedula(client.getCedula());
-          cliente.setFoto(client.getFoto());
-          cliente.setName(client.getName());
-          cliente.setReceipt(client.getReceipt());
-          clientRepository.save(cliente);
-          return cliente;
+          clientRepository.save(client);
+          return client;
       }
 
     }

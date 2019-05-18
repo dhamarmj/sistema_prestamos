@@ -47,21 +47,20 @@ public class FamilyController {
         Optional<Family> c = familyRepository.findById(client.getFamily());
         if(!c.isPresent())
         {
-            familyRepository.save(client);
-            return client;
+            return null;
         }
         else
         {
-            familia = new Family();
-            familia.setFamily(client.getFamily());
-            for (Subfamily s:
-                 client.getSubfamilies()) {
-                if(!subfamilyRepository.findById(s.getSubfamily()).isPresent())
-                    subfamilyRepository.save(s);
-            }
-            familia.setSubfamilies(client.getSubfamilies());
-            familyRepository.save(familia);
-            return familia;
+//            familia = new Family();
+//            familia.setFamily(client.getFamily());
+//            for (Subfamily s:
+//                 client.getSubfamilies()) {
+//                if(!subfamilyRepository.findById(s.getSubfamily()).isPresent())
+//                    subfamilyRepository.save(s);
+//            }
+//            familia.setSubfamilies(client.getSubfamilies());
+            familyRepository.save(client);
+            return client;
         }
 
     }
