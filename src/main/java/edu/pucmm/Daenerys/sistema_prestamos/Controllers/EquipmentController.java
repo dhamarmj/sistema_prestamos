@@ -25,13 +25,13 @@ public class EquipmentController {
         return equipmentRepository.findAll();
     }
 
-    @RequestMapping(value = "/Post", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
     public Equipment crearClient(@RequestBody Equipment client){
         equipmentRepository.save(client);
         return client;
     }
 
-    @RequestMapping(value = "/Put", method = RequestMethod.PUT, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.PUT, consumes = "application/json")
     public Equipment modifyClient(@RequestBody Equipment client){
         Optional<Equipment> c = equipmentRepository.findById(client.getId());
         if(!c.isPresent())
