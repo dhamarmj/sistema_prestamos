@@ -74,13 +74,13 @@ public class Security extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/","/css/**", "/js/**", "/actuator/**").permitAll() //permitiendo llamadas a esas urls.
-               // .antMatchers("/dbconsole/**").permitAll()
-              //  .antMatchers("/admin/**").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/dbconsole/**").permitAll()
+                .antMatchers("/**").hasAnyRole("ADMIN", "USER")
                 //.anyRequest().authenticated() //cualquier llamada debe ser validada
                 .and()
                 .formLogin()
                 .loginPage("/login") //indicando la ruta que estaremos utilizando.
-                .failureUrl("/login?error") //en caso de fallar puedo indicar otra pagina.
+               // .failureUrl("/login?error") //en caso de fallar puedo indicar otra pagina.
                 .permitAll()
                 .and()
                 .logout()
@@ -89,6 +89,7 @@ public class Security extends WebSecurityConfigurerAdapter {
         //deshabilitando las seguridad contra los frame internos.
         //Necesario para H2.
         http.csrf().disable();
+        http.cors().disable();
         http.headers().frameOptions().disable();
     }
 }
