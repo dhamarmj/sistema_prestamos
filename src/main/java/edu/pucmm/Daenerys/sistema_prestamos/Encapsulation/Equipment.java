@@ -9,8 +9,7 @@ public class Equipment implements Serializable {
     @Id
     @GeneratedValue
     private int id;
-    private String family;
-    private String subfamily;
+    private String name;
     private int quantity;
     private double costxday;
 
@@ -20,16 +19,27 @@ public class Equipment implements Serializable {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "equipment")
     private Set<Receipt_detail> details;
 
+    @ManyToOne
+    private Subfamily subfamily;
+
     public Equipment() {
     }
 
-    public Equipment(String family, String subfamily, int quantity, double costxday, String foto, Set<Receipt_detail> details) {
-        this.family = family;
-        this.subfamily = subfamily;
+    public Equipment(String name, int quantity, double costxday, String foto, Set<Receipt_detail> details, Subfamily subfamily) {
+        this.name = name;
         this.quantity = quantity;
         this.costxday = costxday;
         this.foto = foto;
         this.details = details;
+        this.subfamily = subfamily;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -40,19 +50,11 @@ public class Equipment implements Serializable {
         this.id = id;
     }
 
-    public String getFamily() {
-        return family;
-    }
-
-    public void setFamily(String family) {
-        this.family = family;
-    }
-
-    public String getSubfamily() {
+    public Subfamily getSubfamily() {
         return subfamily;
     }
 
-    public void setSubfamily(String subfamily) {
+    public void setSubfamily(Subfamily subfamily) {
         this.subfamily = subfamily;
     }
 

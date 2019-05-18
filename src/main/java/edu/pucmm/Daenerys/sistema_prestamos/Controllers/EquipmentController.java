@@ -1,10 +1,7 @@
 package edu.pucmm.Daenerys.sistema_prestamos.Controllers;
 
-import edu.pucmm.Daenerys.sistema_prestamos.Encapsulation.Client;
-import edu.pucmm.Daenerys.sistema_prestamos.Encapsulation.Equipment;
-import edu.pucmm.Daenerys.sistema_prestamos.Repository.ClientRepository;
+import edu.pucmm.Daenerys.sistema_prestamos.Encapsulation.*;
 import edu.pucmm.Daenerys.sistema_prestamos.Repository.EquipmentRepository;
-import edu.pucmm.Daenerys.sistema_prestamos.Service.EquipmentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,12 +41,16 @@ public class EquipmentController {
         }
         else
         {
-            equipo = new Equipment(client.getFamily(),client.getSubfamily(),client.getQuantity(),client.getCostxday(),client.getFoto(),client.getDetails());
+            equipo = new Equipment();
+            equipo.setId(client.getId());
+            equipo.setCostxday(client.getCostxday());
+            equipo.setDetails(client.getDetails());
+            equipo.setFoto(client.getFoto());
+            equipo.setName(client.getName());
+            equipo.setQuantity(client.getQuantity());
+            equipo.setSubfamily(client.getSubfamily());
             equipmentRepository.save(equipo);
             return equipo;
         }
-
     }
-
-
 }

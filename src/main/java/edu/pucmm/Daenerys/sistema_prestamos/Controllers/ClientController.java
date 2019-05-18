@@ -42,7 +42,12 @@ public class ClientController {
       }
       else
       {
-          cliente = new Client(client.getCedula(), client.getFotoPath());
+          cliente = new Client();
+          cliente.setId(client.getId());
+          cliente.setCedula(client.getCedula());
+          cliente.setFoto(client.getFoto());
+          cliente.setName(client.getName());
+          cliente.setReceipt(client.getReceipt());
           clientRepository.save(cliente);
           return cliente;
       }
