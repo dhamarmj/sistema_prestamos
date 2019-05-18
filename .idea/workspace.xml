@@ -213,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Encapsulation/Equipment.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Encapsulation/Client.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Controllers/ClientController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Controllers/FamilyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Controllers/ReceiptController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Controllers/SubfamiliaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Repository/Security/RolRepository.java" />
@@ -339,7 +338,7 @@
               <item name="pucmm" type="462c0819:PsiDirectoryNode" />
               <item name="Daenerys" type="462c0819:PsiDirectoryNode" />
               <item name="sistema_prestamos" type="462c0819:PsiDirectoryNode" />
-              <item name="Encapsulation" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sistema_prestamos" type="b2602c69:ProjectViewProjectNode" />
@@ -571,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/SistemaPrestamosApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Encapsulation/Receipt_detail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -585,13 +577,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -678,16 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Repository/ClientRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="74" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -818,11 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Controllers/DetailController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2466">
+          <caret line="629" column="16" selection-start-line="629" selection-start-column="16" selection-end-line="629" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -842,6 +814,10 @@
           <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -898,6 +874,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/pucmm/Daenerys/sistema_prestamos/Controllers/EquipmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>
