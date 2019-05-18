@@ -12,6 +12,8 @@ public class Receipt implements Serializable {
     private int id;
     private Date date;
     private double ammount;
+    private boolean deliveryCompleted;
+    private Date payedDate;
 
     @ManyToOne
     private Client client;
@@ -28,6 +30,23 @@ public class Receipt implements Serializable {
         this.ammount = ammount;
         this.client = client;
         this.details = details;
+        this.deliveryCompleted=false;
+    }
+
+    public Date getPayedDate() {
+        return payedDate;
+    }
+
+    public void setPayedDate(Date payedDate) {
+        this.payedDate = payedDate;
+    }
+
+    public boolean isDeliveryCompleted() {
+        return deliveryCompleted;
+    }
+
+    public void setDeliveryCompleted(boolean deliveryCompleted) {
+        this.deliveryCompleted = deliveryCompleted;
     }
 
     public int getId() {

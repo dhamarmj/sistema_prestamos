@@ -36,21 +36,12 @@ public class EquipmentController {
         Optional<Equipment> c = equipmentRepository.findById(client.getId());
         if(!c.isPresent())
         {
-            equipmentRepository.save(client);
-            return client;
+            return null;
         }
         else
         {
-            equipo = new Equipment();
-            equipo.setId(client.getId());
-            equipo.setCostxday(client.getCostxday());
-            equipo.setDetails(client.getDetails());
-            equipo.setFoto(client.getFoto());
-            equipo.setName(client.getName());
-            equipo.setQuantity(client.getQuantity());
-            equipo.setSubfamily(client.getSubfamily());
-            equipmentRepository.save(equipo);
-            return equipo;
+            equipmentRepository.save(client);
+            return client;
         }
     }
 }
