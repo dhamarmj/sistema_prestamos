@@ -26,30 +26,23 @@ public class ClientController {
         return clientRepository.findAll();
     }
 
-    @RequestMapping(value = "/Post", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
     public Client crearClient(@RequestBody Client client){
       clientRepository.save(client);
         return client;
     }
 
-    @RequestMapping(value = "/Put", method = RequestMethod.PUT, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.PUT, consumes = "application/json")
     public Client modifyClient(@RequestBody Client client){
       Optional<Client> c = clientRepository.findById(client.getId());
       if(!c.isPresent())
       {
-          clientRepository.save(client);
-          return client;
+          return null;
       }
       else
       {
-          cliente = new Client();
-          cliente.setId(client.getId());
-          cliente.setCedula(client.getCedula());
-          cliente.setFoto(client.getFoto());
-          cliente.setName(client.getName());
-          cliente.setReceipt(client.getReceipt());
-          clientRepository.save(cliente);
-          return cliente;
+          clientRepository.save(client);
+          return client;
       }
 
     }

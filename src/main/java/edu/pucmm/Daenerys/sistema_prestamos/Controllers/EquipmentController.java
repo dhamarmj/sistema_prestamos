@@ -25,32 +25,23 @@ public class EquipmentController {
         return equipmentRepository.findAll();
     }
 
-    @RequestMapping(value = "/Post", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
     public Equipment crearClient(@RequestBody Equipment client){
         equipmentRepository.save(client);
         return client;
     }
 
-    @RequestMapping(value = "/Put", method = RequestMethod.PUT, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.PUT, consumes = "application/json")
     public Equipment modifyClient(@RequestBody Equipment client){
         Optional<Equipment> c = equipmentRepository.findById(client.getId());
         if(!c.isPresent())
         {
-            equipmentRepository.save(client);
-            return client;
+            return null;
         }
         else
         {
-            equipo = new Equipment();
-            equipo.setId(client.getId());
-            equipo.setCostxday(client.getCostxday());
-            equipo.setDetails(client.getDetails());
-            equipo.setFoto(client.getFoto());
-            equipo.setName(client.getName());
-            equipo.setQuantity(client.getQuantity());
-            equipo.setSubfamily(client.getSubfamily());
-            equipmentRepository.save(equipo);
-            return equipo;
+            equipmentRepository.save(client);
+            return client;
         }
     }
 }

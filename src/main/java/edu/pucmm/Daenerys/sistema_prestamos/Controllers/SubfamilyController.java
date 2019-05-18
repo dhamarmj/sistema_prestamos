@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/Subfamily")
-public class SubfamiliaController
+public class SubfamilyController
 {
     private Subfamily subcategoria;
 
@@ -25,13 +25,13 @@ public class SubfamiliaController
         return subfamilyRepository.findAll();
     }
 
-    @RequestMapping(value = "/Post", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.POST, consumes = "application/json")
     public Subfamily crear(@RequestBody Subfamily client){
         subfamilyRepository.save(client);
         return client;
     }
 
-    @RequestMapping(value = "/Put", method = RequestMethod.PUT, consumes = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.PUT, consumes = "application/json")
     public Subfamily modifyClient(@RequestBody Subfamily client){
         Optional<Subfamily> c = subfamilyRepository.findById(client.getSubfamily());
         if(!c.isPresent())
