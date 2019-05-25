@@ -19,7 +19,7 @@ public class JWTValidator {
 
            jwtUser= new JwtUser();
             jwtUser.setUsername(body.getSubject());
-            jwtUser.setId(Long.parseLong ((String) body.get("userId")));
+            jwtUser.setId(Integer.parseInt((String) body.get("userId")));
             jwtUser.setRole((String) body.get("role"));
 
 

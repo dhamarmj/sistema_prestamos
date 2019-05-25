@@ -11,6 +11,7 @@ public class User implements Serializable {
     private int id;
     private String username;
     private String password;
+    private String token;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private
@@ -28,6 +29,14 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.roles = roles;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public int getId() {
