@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Subfamily")
+@RequestMapping("/ws/Subfamily")
 public class SubfamilyController
 {
     private Subfamily subcategoria;
