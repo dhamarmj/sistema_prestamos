@@ -17,6 +17,7 @@ import java.util.*;
 
 @Service
 public class SecurityServices implements UserDetailsService {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -24,7 +25,7 @@ public class SecurityServices implements UserDetailsService {
     private RolRepository rolRepository;
 
     //Para encriptar la información.
-    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+     private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     //cualquier cosa...
 
@@ -33,16 +34,21 @@ public class SecurityServices implements UserDetailsService {
      */
     public void crearUsuarios(){
         //System.out.println("Creación del usuario y rol en la base de datos");
-        Role rolAdmin = new Role("ROLE_ADMIN");
-        Role roleUser = new Role("ROLE_USER");
-        rolRepository.save(rolAdmin);
-        rolRepository.save(roleUser);
+        if(userRepository.findAll() == null) {
+            Role rolAdmin = new Role("ADMIN");
+            Role roleUser = new Role("USER");
 
-        User user = new User("user", bCryptPasswordEncoder.encode("user"),new HashSet<>(Arrays.asList(roleUser)));
-        User admin = new User("admin", bCryptPasswordEncoder.encode("admin"),new HashSet<>(Arrays.asList(rolAdmin)));
+            if(rolRepository.findAll() == null){
+                rolRepository.save(rolAdmin);
+                rolRepository.save(roleUser);
+            }
 
-        userRepository.save(admin);
-        userRepository.save(user);
+            User user = new User("user", bCryptPasswordEncoder.encode("user"), new HashSet<>(Arrays.asList(roleUser)));
+            User admin = new User("admin", bCryptPasswordEncoder.encode("admin"), new HashSet<>(Arrays.asList(rolAdmin)));
+
+            userRepository.save(admin);
+            userRepository.save(user);
+        }
     }
 
     @Override

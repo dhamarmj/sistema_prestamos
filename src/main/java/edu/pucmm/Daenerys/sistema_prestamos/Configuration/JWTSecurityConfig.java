@@ -45,7 +45,7 @@ public class JWTSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/","/css/**", "/js/**", "/actuator/**").permitAll() //permitiendo llamadas a esas urls.
                 .antMatchers("/dbconsole/**", "/token").permitAll()
-                .antMatchers("**/ws/**").authenticated()
+                .antMatchers("/ws/**").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")

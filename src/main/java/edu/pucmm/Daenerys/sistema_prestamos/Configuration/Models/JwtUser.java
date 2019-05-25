@@ -2,7 +2,7 @@ package edu.pucmm.Daenerys.sistema_prestamos.Configuration.Models;
 
 public class JwtUser {
     private String username;
-    private long id;
+    private int id;
     private String role;
 
     public void setUsername(String username) {
@@ -13,14 +13,13 @@ public class JwtUser {
         return username;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
-
 
     public void setRole(String role) {
         this.role=role;

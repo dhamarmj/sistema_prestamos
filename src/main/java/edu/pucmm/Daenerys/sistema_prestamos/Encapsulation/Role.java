@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Entity
 public class Role implements Serializable {
     @Id
-    @GeneratedValue
     private String role;
 
     public Role() {
