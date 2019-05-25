@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface DetailRepository extends JpaRepository<Receipt_detail, Integer> {
 
-//    @Query("select u from Receipt_detail u where u.receipt = ?1")
+//   @Query("select u from Receipt_detail u where u.receipt = ?1")
 //    Profesor consultaProfesor(String cedula);
 
 }

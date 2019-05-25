@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/Receipts")
+@RequestMapping("/ws/Receipts")
 public class ReceiptController {
 
     private Receipt recibo;

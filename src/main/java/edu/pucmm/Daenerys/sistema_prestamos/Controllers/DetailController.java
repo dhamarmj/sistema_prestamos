@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Detail")
+@RequestMapping("/ws/Detail")
 public class DetailController {
 
     private Receipt_detail detail;
